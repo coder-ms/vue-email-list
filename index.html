@@ -14,17 +14,42 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <link href="./css/style.css" rel="stylesheet">
+        <!--LIBRERIA AXIOS PER API-->
         <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
         <title>VUE MAIL LIST</title>
     </head>
-<body>
-    <div id="app" class="d-flex justify-content-center align-items-center">
+    <body>
+        <div id="app" class="d-flex justify-content-center align-items-center">
 
+            <div id="app" class="d-flex justify-content-center align-items-center">
+                <!--MAX, MIN ITEM-->
+                <div class="d-flex justify-content-center align-items-center">
+                    <form @submit.prevent="callApi">
+                        <label for="">Numero minimo</label>
+                        <input type="number" v-model.number="options.params.min">
+                        <label for="">Numero massimo</label>
+                        <input type="number" v-model.number="options.params.max">
+                        <label for="">Numero di elementi</label>
+                        <input type="number" v-model.number="options.params.items">
+                        <button type="submit">Invia</button>
+                    </form>
+                </div>
 
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
-    <script src="./js/script.js"></script>
+                <!-- MAIL -->
+                <div class="d-flex justify-content-center align-items-center">
+                    <div v-for="(email, index) in elencoMail" :key="index">
+                        <!--elencoMail.email-->
+                        {{email}}
+                    </div>
+                </div>
 
-</body>
+            </div>
+        </div>
+
+        <!--SCRIPT e COLLEGAMENTO VUE-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
+        <script src="./js/script.js"></script>
+
+    </body>
 </html>
+
