@@ -19,32 +19,17 @@
         <title>VUE MAIL LIST</title>
     </head>
     <body>
-        <div id="app" class="d-flex justify-content-center align-items-center">
 
             <div id="app" class="d-flex justify-content-center align-items-center">
-                <!--MAX, MIN ITEM-->
-                <div class="d-flex justify-content-center align-items-center">
-                    <form @submit.prevent="callApi">
-                        <label for="">Numero minimo</label>
-                        <input type="number" v-model.number="options.params.min">
-                        <label for="">Numero massimo</label>
-                        <input type="number" v-model.number="options.params.max">
-                        <label for="">Numero di elementi</label>
-                        <input type="number" v-model.number="options.params.items">
-                        <button type="submit">Invia</button>
-                    </form>
-                </div>
-
                 <!-- MAIL -->
                 <div class="d-flex justify-content-center align-items-center">
-                    <div v-for="(email, index) in elencoMail" :key="index">
-                        <!--elencoMail.email-->
-                        {{email}}
+                    <div class="lista" v-for="(email, index) in elencoMail" :key="index">
+                        <ul>
+                            <li>{{email}}</li>
+                        </ul>
                     </div>
                 </div>
-
             </div>
-        </div>
 
         <!--SCRIPT e COLLEGAMENTO VUE-->
         <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
