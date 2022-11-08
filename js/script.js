@@ -11,19 +11,12 @@ Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 
 const { createApp } = Vue;
 const app = createApp({
+
     data() {
         return {
-            options:{
-                params:{
-                    min:0,
-                    max:0,
-                    items:0
-                }
-            },
-            elencoMail:[]
+            elencoMail: [],
         }
     },
-
 
     computed: {
 

@@ -19,17 +19,17 @@
         <title>VUE MAIL LIST</title>
     </head>
     <body>
-
-            <div id="app" class="d-flex justify-content-center align-items-center">
-                <!-- MAIL -->
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="lista" v-for="(email, index) in elencoMail" :key="index">
-                        <ul>
-                            <li>{{email}}</li>
-                        </ul>
-                    </div>
+        <div id="app">
+            <!-- MAIL -->
+            <div>
+                <p>ELENCO MAIL</p>
+                <div class="lista">
+                    <ul>
+                        <li v-for="(email, index) in elencoMail" :key="index"><p>{{email}}</p></li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
         <!--SCRIPT e COLLEGAMENTO VUE-->
         <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
